@@ -4,6 +4,16 @@ const ultimasAvaliacoes = document.querySelector('#last-ratings');
 // Função para atualizar a div container teste com as últimas avaliações
 const URL = "http://localhost:3000"
 
+function generateStarRating(score) {
+    const stars = ['<i class="far fa-star"></i>', '<i class="fas fa-star-half-alt"></i>', '<i class="fas fa-star"></i>'];
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+      html += stars[i <= score ? 2 : 0];
+    }
+    return html;
+  }
+  
+
 function atualizaAvaliacoes() {
     // Limpa a div container teste
     ultimasAvaliacoes.innerHTML = '';
@@ -27,19 +37,21 @@ function atualizaAvaliacoes() {
                     `
                     <p>${rating.Organizations[0].name}<p>
                     <p>${rating.Organizations[0].amountOfReviews} Avaliações</p>
-                    <h3>${rating.title}</h3>
+                    <p>"${rating.title}"</p>
                     <p>Avaliado em ${formattedDate}</p>
-                    <p>Stars: ${rating.score}</p>
+                    <div class="star-rating">
+                        ${generateStarRating(rating.score)}
+                    </div>
                     <p>${rating.review}</p>
                 `;
                 ultimasAvaliacoes.appendChild(ratingElement);
             });
-
+    
         })
         .catch(error => {
             console.log(error);
         });
-}
+    }    
 
 // Chama a função para carregar as avaliações iniciais
 atualizaAvaliacoes();
@@ -50,7 +62,6 @@ const form = document.querySelector('form');
 const searchOrganization = async (name) => {
     const response = await fetch(`${URL}/organizations?name=${name}`);
     const empresas = await response.json();
-    console.log(empresas)
     return empresas;
 };
 
