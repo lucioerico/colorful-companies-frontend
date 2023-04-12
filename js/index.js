@@ -6,9 +6,18 @@ const URL = "http://localhost:3000"
 
 function generateStarRating(score) {
     const stars = ['<i class="far fa-star"></i>', '<i class="fas fa-star-half-alt"></i>', '<i class="fas fa-star"></i>'];
+    const scoreFloor = Math.floor(score);
+    const scoreDiff = score - scoreFloor;
     let html = '';
-    for (let i = 0; i < 5; i++) {
-      html += stars[i <= score ? 2 : 0];
+    for (let i = 0; i < scoreFloor; i++) {
+      html += stars[2];
+    }
+    if (scoreDiff >= 0.5) {
+      html += stars[1];
+    }
+    const remaining = 5 - scoreFloor - (scoreDiff >= 0.5 ? 1 : 0);
+    for (let i = 0; i < remaining; i++) {
+      html += stars[0];
     }
     return html;
   }
