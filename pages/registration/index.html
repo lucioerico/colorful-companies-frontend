@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script/index.js" defer></script>
+    <title>Cadastre-se</title>
+</head>
+<body>
+    <h2 id="main-title">Preencha seus dados</h2>
+    <form class="fields-form">
+        <li class="user-fields">
+            <ul id="name">
+                <input type="text" id="name-input">
+                <label for="name-input">Nome</label>
+            </ul>
+            <ul id="email">
+                <input type="email" id="email-input">
+                <label for="email-input">E-mail</label>
+            </ul>
+            <ul id="telephone">
+                <input type="tel" id="telephone-input">    
+                <label for="telephone-input">Telefone</label>
+            </ul>
+            <ul id="adrress">
+                <input type="text" id="address-input">
+                <label for="address-input">Endereço</label>    
+            </ul>
+            <ul id="password">
+                <input type="password" id="password-input">    
+                <label for="password-input">Senha</label>
+            </ul>
+        </li>
+        <div class="agreement-container">
+            <input type="checkbox" id="agreeement-checkbox">
+            <label for="agreeement-checkbox">Declaro que li e concordo com os termos de uso</label>
+        </div>
+        <div class="actions-container">
+            <button type="submit" id="submit-button">Cadastrar</button>
+            <button type="button" id="cancel-button">Cancelar</button>
+        </div>
+    </form>
+</body>
+</html>
