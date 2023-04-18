@@ -4,42 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
     <script src="./script/index.js" defer></script>
     <title>Cadastre-se</title>
 </head>
 <body>
-    <h2 id="main-title">Preencha seus dados</h2>
-    <form class="fields-form">
-        <li class="user-fields">
-            <ul id="name">
-                <input type="text" id="name-input">
-                <label for="name-input">Nome</label>
+    <div id="wrapper">
+        <h2 id="main-title">Preencha seus dados</h2>
+        <form id="fields-form">
+            <ul class="user-fields">
+                <li id="name">
+                    <label for="name-input">Nome</label>
+                    <input type="text" id="name-input">
+                </li>
+                <li id="email">
+                    <label for="email-input">E-mail</label>
+                    <input type="email" id="email-input">
+                </li>
+                <li id="telephone">
+                    <label for="telephone-input">Telefone</label>
+                    <input type="tel" id="telephone-input">    
+                </li>
+                <li id="adrress">
+                    <label for="address-input">Endereço</label>    
+                    <input type="text" id="address-input">
+                </li>
+                <li id="password">
+                    <label for="password-input">Senha</label>
+                    <input type="password" id="password-input">    
+                </li>
             </ul>
-            <ul id="email">
-                <input type="email" id="email-input">
-                <label for="email-input">E-mail</label>
-            </ul>
-            <ul id="telephone">
-                <input type="tel" id="telephone-input">    
-                <label for="telephone-input">Telefone</label>
-            </ul>
-            <ul id="adrress">
-                <input type="text" id="address-input">
-                <label for="address-input">Endereço</label>    
-            </ul>
-            <ul id="password">
-                <input type="password" id="password-input">    
-                <label for="password-input">Senha</label>
-            </ul>
-        </li>
-        <div class="agreement-container">
-            <input type="checkbox" id="agreeement-checkbox">
-            <label for="agreeement-checkbox">Declaro que li e concordo com os termos de uso</label>
-        </div>
-        <div class="actions-container">
-            <button type="submit" id="submit-button">Cadastrar</button>
-            <button type="button" id="cancel-button">Cancelar</button>
-        </div>
-    </form>
-</body>
+            <div class="agreement-container">
+                <input type="checkbox" id="agreeement-checkbox-label">
+                <label for="agreeement-checkbox" id="agreeement-checkbox-label">Declaro que li e concordo com os termos de uso</label>
+            </div>
+            <div class="actions-container">
+                <button type="submit" id="submit-button">Cadastrar</button>
+                <button type="button" id="cancel-button">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    </body>
 </html>
