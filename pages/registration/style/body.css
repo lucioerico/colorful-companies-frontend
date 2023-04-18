@@ -1,0 +1,42 @@
+#main-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 1rem;
+}
+
+input, label {
+    display:block;
+}
+
+li label{
+    margin-inline-start: 0.5rem;
+}
+
+.user-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-fields li {
+    margin: 0rem 1rem 2rem 1rem;
+}
+
+.agreement-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#agreement-checkbox, 
+#agreeement-checkbox-label {
+    display: inline;
+}
+
+.actions-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 1rem;
+}
