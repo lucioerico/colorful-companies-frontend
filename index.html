@@ -83,7 +83,8 @@
               <h3>Colorful Companies</h3>
               <p>Transformar ambientes e criar oportunidades verdadeiras, compreendendo o cenário e encontrando soluções
                 que façam a diferença na vida dos profissionais. Nossa missão é colorir o mundo com mais diversidade.
-                Junte-se a nós!</p>
+                Junte-se a nós!
+              </p>
             </div>
           </div>
         </section>
@@ -141,7 +142,6 @@
             </div>
           </div>
         </section>
-        <!-- FORMULARIO AVALIAR-->
         <div class="modal fade" id="avaliar" tabindex="-1" aria-labelledby="AvaliarLabel" aria-hidden="true">
           <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
@@ -154,15 +154,15 @@
                   <form method='post' id="form">
                     <div class="form-group">
                       <label for="razaoSocialAvaliacao mt-4" class="form-label">Razão Social</label>
-                      <input type="razaoSocialAvaliacao" class="form-control form-input" id="razaoSocialAvaliacao"
-                        autocomplete='off' aria-describedby="razaoSocialAvaliacao" placeholder="Nome da Empresa">
-                      <ul id="empresa-list"></ul>
+                      <select id="empresa-list" class="form-select">
+                        <option value="" disabled selected hidden>Selecione uma empresa *</option>
+                      </select>
                       <input type="hidden" name="organizationId" id="organizationId">
                     </div>
                     <div class="form-group">
                       <label for="tituloAvaliacao mt-4">Título</label>
-                      <input type="text" class="form-control form-input" id="tituloAvaliacao"
-                        placeholder="Título da Avaliação">
+                      <input type="text" class="form-control form-input" autocomplete="off" id="tituloAvaliacao"
+                        placeholder="Título da Avaliação *">
                     </div>
                     <div class="form-group">
                       <label for="avaliacao">Avaliação</label>
@@ -180,35 +180,16 @@
                         <label for="star1" title="text">1 star</label>
                       </div>
                       <textarea rows="5" class="form-control form-input" id="avaliacao"
-                        placeholder="Deixe seu comentário na avaliação"></textarea>
+                        placeholder="Deixe seu comentário na avaliação *"></textarea>
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" class="btn btn-secondary btn-rate btn-size" data-bs-dismiss="modal"
-                        data-bs-toggle="modal" data-bs-target="#avaliadoComSucesso">Avaliar</button>
-                      <button type="button" class="btn btn-danger btn-cancel btn-size"
-                        data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-secondary btn-rate btn-size">Avaliar</button>
+                      <button type="button" class="btn btn-danger btn-cancel btn-size" data-bs-dismiss="modal"
+                        onclick='resetForm()'>Cancelar</button>
                     </div>
                   </form>
                   <p id="log"></p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- MODAL AVALIADO COM SUCESSO -->
-        <div class="modal fade" id="avaliadoComSucesso" tabindex="-1" aria-labelledby="avaliadoComSucessoLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body card-info">
-                <p class="sucessfull-sent">Avaliação enviada com sucesso!</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary btn-rated btn-size"
-                  data-bs-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
@@ -221,7 +202,8 @@
       <div class="col-md-4 d-flex align-items-center">
         <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"></a>
         <span class="mb-3 mb-md-0">
-          <p>Colorful Companies</p>©2023 Colorful Companies <br>Todos os direitos reservados
+          <p>Colorful Companies</p>
+          ©2023 Colorful Companies <br>Todos os direitos reservados
         </span>
       </div>
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

@@ -307,6 +307,10 @@ input, textarea {
   border: none !important;
 }
 
+.error-message {
+  color: red;
+  font-size: 10px;
+}
 
 /*---------------- 
   STARS RATING
