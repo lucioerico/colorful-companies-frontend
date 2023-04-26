@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
@@ -10,37 +13,42 @@
 </head>
 <body>
     <div id="wrapper">
-        <h2 id="main-title">Preencha seus dados</h2>
+        <h2 class="main-title">Preencha seus dados</h2>
         <form id="fields-form">
-            <ul class="user-fields">
-                <li id="name">
-                    <label for="name-input">Nome</label>
-                    <input type="text" id="name-input">
-                </li>
-                <li id="email">
-                    <label for="email-input">E-mail</label>
-                    <input type="email" id="email-input">
-                </li>
-                <li id="telephone">
-                    <label for="telephone-input">Telefone</label>
-                    <input type="tel" id="telephone-input">    
-                </li>
-                <li id="adrress">
-                    <label for="address-input">Endereço</label>    
-                    <input type="text" id="address-input">
-                </li>
-                <li id="password">
-                    <label for="password-input">Senha</label>
-                    <input type="password" id="password-input">    
-                </li>
-            </ul>
-            <div class="agreement-container">
-                <input type="checkbox" id="agreeement-checkbox-label">
-                <label for="agreeement-checkbox" id="agreeement-checkbox-label">Declaro que li e concordo com os termos de uso</label>
+            <div class="user-fields">
+                <div class="name">
+                    <label for="name">Nome</label>
+                    <input class="form-input-text" type="text" name="name">
+                </div>
+                <div class="email">
+                    <label for="email">E-mail</label>
+                    <input class="form-input-text" type="email" name="email">
+                </div>
+                <div class="telephone">
+                    <label for="telephone">Telefone</label>
+                    <input class="form-input-text" type="tel" name="telephone">    
+                </div>
+                <div class="adrress">
+                    <label for="address">Endereço</label>    
+                    <input class="form-input-text" type="text" name="address">
+                </div>
+                <div class="password">
+                    <label for="password">Senha</label>
+                    <input class="form-input-text" type="password" name="password">    
+                </div>
+                <div class="confirm-password">
+                    <label for="confirm-password">Confirmar senha</label>
+                    <input class="form-input-text" type="password" name="confirm-password">    
+                </div>
+                <div class="agreement-container">
+                    <input type="checkbox" required class="agreeement-checkbox" name="agreeement-checkbox">
+                    <label for="agreeement-checkbox">Declaro que li e concordo com os <a href="">termos de uso</a></label>
+                </div>
             </div>
+            <div id="error-message"></div>
             <div class="actions-container">
-                <button type="submit" id="submit-button">Cadastrar</button>
-                <button type="button" id="cancel-button">Cancelar</button>
+                <button type="submit" class="submit-button">Cadastrar</button>
+                <button type="button" class="cancel-button">Cancelar</button>
             </div>
         </form>
     </div>
