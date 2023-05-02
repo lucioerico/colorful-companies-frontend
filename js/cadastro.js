@@ -2,38 +2,63 @@
 const form = document.getElementById('form');
 
 // Armazena uma referência aos campos do formulário
-form.addEventListener('submit', function (event) {
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const confirmPasswordInput = document.getElementById('confirm-password');
+
+// Adiciona um event listener para o botão de enviar o formulário
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const name = document.getElementById('name').value;
-    const cpf = document.getElementById('cpf').value;
-    const email = document.getElementById('email').value;
-    const city = document.getElementById('city').value;
-    const address = document.getElementById('address').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmarSenha').value;
-    const data = {
-        name,
-        cpf,
-        email,
-        city,
-        address,
-        password,
-        confirmPassword
-    };
+    // Realiza a validação dos campos do formulário
+    let isValid = true;
 
-    fetch('http://localhost:3000/addPerson', {
+    if (nameInput.value.trim() === '') {
+        isValid = false;
+        nameInput.classList.add('invalid');
+    } else {
+        nameInput.classList.remove('invalid');
+    }
+
+    if (emailInput.value.trim() === '') {
+        isValid = false;
+        emailInput.classList.add('invalid');
+    } else {
+        emailInput.classList.remove('invalid');
+    }
+
+    if (passwordInput.value.trim() === '') {
+        isValid = false;
+        passwordInput.classList.add('invalid');
+    } else {
+        passwordInput.classList.remove('invalid');
+    }
+
+    if (confirmPasswordInput.value.trim() === '' || confirmPasswordInput.value.trim() !== passwordInput.value.trim()) {
+        isValid = false;
+        confirmPasswordInput.classList.add('invalid');
+    } else {
+        confirmPasswordInput.classList.remove('invalid');
+    }
+
+    // Se os campos estiverem válidos, envia os dados para o servidor
+    if (isValid) {
+        const response = await fetch('http://localhost:3000/addPerson', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
+            body: JSON.stringify({
+                name: nameInput.value,
+                email: emailInput.value,
+                password: passwordInput.value
+            })
         });
+
+        const data = await response.json();
+
+        // Redireciona o usuário para a página de login
+        window.location.href = 'login.html';
+    }
 });

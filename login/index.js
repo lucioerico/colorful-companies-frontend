@@ -17,7 +17,7 @@ function fazerLogin() {
         .then(response => {
             if (response.ok) {
                 document.getElementById('success-message').style.display = 'block';
-                window.location.href = "http://exemplo.com/pagina-de-destino";
+                window.location.href = 'http://www.uol.com.br';
             } else {
                 response.text().then(mensagem => {
                     const messageContainer = document.getElementById('message-container');
