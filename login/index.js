@@ -1,8 +1,8 @@
 function fazerLogin() {
-    const emailInput = document.getElementById('email-input');
-    const passwordInput = document.getElementById('password-input');
+    let emailInput = document.getElementById('email-input');
+    let passwordInput = document.getElementById('password-input');
 
-    const jsonData = {
+    let jsonData = {
         email: emailInput.value,
         senha: passwordInput.value
     };
