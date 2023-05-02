@@ -17,6 +17,7 @@ function fazerLogin() {
         .then(response => {
             if (response.ok) {
                 document.getElementById('success-message').style.display = 'block';
+                window.location.href = "http://exemplo.com/pagina-de-destino";
             } else {
                 response.text().then(mensagem => {
                     const messageContainer = document.getElementById('message-container');
@@ -43,4 +44,6 @@ loginForm.addEventListener('submit', function (event) {
 });
 
 const registerButton = document.getElementById('register-button');
-registerButton.addEventListener('click', mostrarFormularioCadastro);
+registerButton.addEventListener('click', function () {
+    window.location.href = 'http://www.uol.com.br'; // altere 'cadastrar.html' pelo nome da sua página de cadastro
+});
