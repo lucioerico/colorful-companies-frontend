@@ -8,8 +8,8 @@ form.addEventListener('submit', async (event) => {
     const name = form.elements["name"];
     const email = form.elements["email"];
     const cpf = form.elements["cpf"];
-    const telephone = form.elements["telephone"];
     const address = form.elements["address"];
+    const city = form.elements["city"];
     const password = form.elements["password"];
     const confirmPassword = form.elements["confirm-password"];
 
@@ -20,8 +20,8 @@ form.addEventListener('submit', async (event) => {
         displayError("O Campo 'E-mail' é obrigatório.");
     } else if (cpf.value === "") {
         displayError("O Campo 'CPF' é obrigatório.");
-    } else if (telephone.value === "") {
-        displayError("O Campo 'Telefone' é obrigatório.");
+    } else if (city.values === "") {
+        displayError("O Campo 'Cidade' é obrigatório.");
     } else if (address.values === "") {
         displayError("O Campo 'Endereço' é obrigatório.");
     } else if (password.value === "") {
@@ -29,10 +29,7 @@ form.addEventListener('submit', async (event) => {
     } else if (password.value !== confirmPassword.value) {
         displayError("A confirmação da senha é inválida.");
     } else {
-        // Create object from form target data
-    
-        //const formData = Object.fromEntries(event.target);
-    
+
         try {
             // HTTP Request
             const response = await fetch('http://localhost:3000/addPerson', {
@@ -41,26 +38,25 @@ form.addEventListener('submit', async (event) => {
                 headers: {
                     'Content-type': "application/json"
                 },
-                // body: JSON.stringify(formData)
 
-                // test
-                body: JSON.stringify({
+                body: JSON.stringify(        {
                     "name": name.value,
                     "cpf": cpf.value,
+                    "city": city.value,
+                    "address": address.value,
+                    "password": password.value,
                     "email": email.value,
                 }),
             });
             
             const result = await response.json();
-            console.log(result);
             
             //redirect
             alert("Cadastrado!")            
         } catch (error) {
-            displayError("Ocorreu um erro, tente mais tarde")
-            
             //handle error
             console.log(error);
+            displayError("Ocorreu um erro, tente mais tarde")
         }
     }
 });
