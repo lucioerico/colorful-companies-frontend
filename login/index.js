@@ -4,7 +4,7 @@ function fazerLogin() {
 
     let jsonData = {
         email: emailInput.value,
-        senha: passwordInput.value
+        password: passwordInput.value
     };
 
     fetch('http://localhost:3000/findLogin', {
