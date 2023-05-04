@@ -17,6 +17,7 @@ function fazerLogin() {
         .then(response => {
             if (response.ok) {
                 document.getElementById('success-message').style.display = 'block';
+                        // TODO: colocar o redirecionamento do código para página index(rating)
                 window.location.href = 'http://www.uol.com.br';
             } else {
                 response.text().then(mensagem => {
@@ -43,6 +44,7 @@ loginForm.addEventListener('submit', function (event) {
     fazerLogin();
 });
 
+// TODO: colocar o redirecionamento do código para página de cadastro
 const registerButton = document.getElementById('register-button');
 registerButton.addEventListener('click', function () {
     window.location.href = 'http://www.uol.com.br'; // altere 'cadastrar.html' pelo nome da sua página de cadastro
