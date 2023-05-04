@@ -57,10 +57,12 @@ li label{
 
 #fields-form input[type=text] {
     background-image: url("images/email-icon.png");
+    color: #606060;
 }
 
 #fields-form input[type=password] {
     background-image: url("images/password-icon.png");
+    color: #606060;
 }
 
 #fields-form input:focus{
@@ -71,6 +73,24 @@ li label{
 #action-container {
     align-items: center;
     justify-content: center;
+}
+
+#message-container {
+    display: none;
+    background-color: #4BB543;
+    height: 40px;
+    width: 200px;
+    align-items: center;
+}
+
+/* #success-message {
+    display: none;
+    //align-items: center;
+} */
+
+#success-message p {
+    display: flex;
+    align-items: center;
 }
 
 #login-button {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/body.css">
+   <link rel="shortcut icon" href="../assets/heart-flag.png" type="image/x-icon">
     <title>Login</title>
 </head>
 <body>
@@ -25,12 +26,12 @@
                     <input type="password" id="password-input" placeholder="**********">
                 </li>
             </ul>
+            <div id="message-container">
+                <p id="success-message">Login bem sucedido!</p>
+            </div>
             <div id="action-container">
                 <button type="submit" id="login-button">Acessar</button>
             </div>
-                    <!-- TODO: Div onde a mensagem de erro aparece, melhorar layout --> 
-                <p id="success-message" style="display:none;">Login bem sucedido!</p>
-                <div id="message-container"></div>
             <div id="register-container">
                 <label for="register" id="register-text">Ainda não tem cadastro?</label>
                 <button type="button" id="register-button">Cadastre-se</button>
