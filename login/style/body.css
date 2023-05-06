@@ -1,0 +1,126 @@
+#logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+#logo {
+    width: 347px;
+    height: 119px;
+}
+
+#main-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 1rem;
+    color: #242426;
+}
+
+input, label {
+    display:block;
+}
+
+#wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+li label{
+    margin-inline-start: 0.5rem;
+    color: #606060;
+}
+
+#fields-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#fields-form li {
+    flex-direction: column;
+    margin: 0rem 1rem 2rem 1rem;
+}
+
+#fields-form input {
+    border: none;
+    border-bottom: 2px solid #d2d2d2;
+    padding: 10px;
+    margin-top: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+}
+
+#fields-form input[type=text] {
+    background-image: url("images/email-icon.png");
+    color: #606060;
+}
+
+#fields-form input[type=password] {
+    background-image: url("images/password-icon.png");
+    color: #606060;
+}
+
+#fields-form input:focus{
+    outline: 2px solid #c4c4c4;
+    border-bottom: none;
+}
+
+#action-container {
+    align-items: center;
+    justify-content: center;
+}
+
+#message-container {
+    display: none;
+    background-color: #4BB543;
+    height: 40px;
+    width: 200px;
+    align-items: center;
+}
+
+/* #success-message {
+    display: none;
+    //align-items: center;
+} */
+
+#success-message p {
+    display: flex;
+    align-items: center;
+}
+
+#login-button {
+    background-color: #5DCACA;
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+#register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    margin: 2rem 1rem;
+}
+
+#register-text {
+    color: #606060;
+}
+
+#register-button {
+    border: none;
+    background: none;
+    color: #5D61CC;
+}
+
+#register-button:hover {
+    text-decoration: underline;
+}
