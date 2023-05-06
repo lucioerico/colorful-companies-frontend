@@ -22,7 +22,7 @@
                 </div>
                 <div class="cpf">
                     <label for="cpf">CPF</label>    
-                    <input class="form-input-text" type="number" name="cpf">
+                    <input class="form-input-text" type="number" min="0" name="cpf">
                 </div>
                 <div class="email">
                     <label for="email">E-mail</label>
@@ -50,9 +50,11 @@
                 </div>
             </div>
             <div id="error-message"></div>
+            <div id="success-message"></div>
             <div class="actions-container">
                 <button type="submit" class="submit-button">Cadastrar</button>
                 <button type="button" class="cancel-button">Cancelar</button>
+                <p class="redirect-login">Já possui cadastro? <a href="../login/index.html">Entre clicando aqui</a></p>
             </div>
         </form>
     </div>

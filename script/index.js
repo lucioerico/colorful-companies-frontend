@@ -1,5 +1,4 @@
-const ultimasAvaliacoes = document.querySelector('#last-ratings');
-
+const lastRatings = document.querySelector('#last-ratings');
 const URL = "http://localhost:3000"
 
 function generateStarRating(score) {
@@ -20,8 +19,8 @@ function generateStarRating(score) {
 	return html;
 }
 
-function atualizaAvaliacoes() {
-	ultimasAvaliacoes.innerHTML = '';
+function refreshReviews() {
+	lastRatings.innerHTML = '';
 
 	fetch(`${URL}/ratings`)
 		.then(response => response.json())
@@ -47,7 +46,7 @@ function atualizaAvaliacoes() {
                     </div>
                     <p>${rating.review}</p>
                 `;
-				ultimasAvaliacoes.appendChild(ratingElement);
+				lastRatings.appendChild(ratingElement);
 			});
 
 		})
@@ -56,44 +55,42 @@ function atualizaAvaliacoes() {
 		});
 }
 
-atualizaAvaliacoes();
+refreshReviews();
 
 const form = document.querySelector('form');
 
 const searchOrganization = async (name) => {
 	const response = await fetch(`${URL}/organizations?name=${name}`);
-	const empresas = await response.json();
-	return empresas;
+	const organizations = await response.json();
+	return organizations;
 };
-
-const empresaList = document.getElementById('empresa-list');
 
 document.addEventListener('DOMContentLoaded', () => {
 	const modal = document.querySelector('#avaliar');
 
 	modal.addEventListener('shown.bs.modal', async function() {
-		const name = document.getElementById('empresa-list').value;
-		const empresas = await searchOrganization(name);
-		const empresaList = document.getElementById('empresa-list');
+		const name = document.getElementById('organizations-list').value;
+		const organizations = await searchOrganization(name);
+		const organizationsList = document.getElementById('organizations-list');
 
 		let selectOrganizationOption = document.createElement("option");
-		empresaList.innerHTML = '';
+		organizationsList.innerHTML = '';
 		selectOrganizationOption.append('Selecione uma empresa')
 		selectOrganizationOption.setAttribute('disabled', true);
 		selectOrganizationOption.setAttribute('selected', true);
-		empresaList.append(selectOrganizationOption)
-		empresas.forEach((empresa) => {
+		organizationsList.append(selectOrganizationOption)
+		organizations.forEach((organization) => {
 			const option = document.createElement('option');
-			option.innerText = empresa.name;
-			option.setAttribute('data-organization-id', empresa.id);
+			option.innerText = organization.name;
+			option.setAttribute('data-organization-id', organization.id);
 			option.addEventListener('click', () => {
-				document.getElementById('empresa-list').value = empresa.name;
-				empresaList.innerHTML = '';
-				this.dataset.organizationId = empresa.id
-				document.getElementById('organizationId').value = empresa.id;
+				document.getElementById('organizations-list').value = organization.name;
+				organizationsList.innerHTML = '';
+				this.dataset.organizationId = organization.id
+				document.getElementById('organizationId').value = organization.id;
 			});
 
-			empresaList.appendChild(option);
+			organizationsList.appendChild(option);
 		});
 	});
 });
@@ -115,7 +112,7 @@ form.addEventListener('submit', async (event) => {
 		return;
 	}
 	const personId = "cc765d0e-810d-483d-87c0-274349eb5628";
-	const organizationId = form.elements['empresa-list'].options[form.elements['empresa-list'].selectedIndex].getAttribute('data-organization-id');
+	const organizationId = form.elements['organizations-list'].options[form.elements['organizations-list'].selectedIndex].getAttribute('data-organization-id');
 
 	const dateRate = new Date().toISOString();
 
@@ -169,7 +166,7 @@ form.addEventListener('submit', async (event) => {
 	const bootstrapModal = bootstrap.Modal.getInstance(avaliarModal);
 	bootstrapModal.hide();
 
-	atualizaAvaliacoes();
+	refreshReviews();
 });
 
 const removeError = () => {

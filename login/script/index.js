@@ -1,4 +1,4 @@
-function fazerLogin() {
+function doLogin() {
     let emailInput = document.getElementById('email-input');
     let passwordInput = document.getElementById('password-input');
 
@@ -17,7 +17,7 @@ function fazerLogin() {
         .then(response => {
             if (response.ok) {
                 document.getElementById('success-message').style.display = 'block';
-                window.location.href = "../index.html"
+                setTimeout(() => window.location.href = "../index.html", 1000);
             } else {
                 response.text().then(mensagem => {
                     const messageContainer = document.getElementById('message-container');
@@ -32,19 +32,14 @@ function fazerLogin() {
         });
 }
 
-function mostrarFormularioCadastro() {
-    const formCadastro = document.getElementById('formCadastroCliente');
-    formCadastro.style.display = 'block';
-}
-
 const loginForm = document.getElementById('fields-form');
 loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    fazerLogin();
+    doLogin();
 });
 
 // TODO: colocar o redirecionamento do código para página de cadastro
 const registerButton = document.getElementById('register-button');
 registerButton.addEventListener('click', function () {
-    window.location.href = "../cadastro.html"; // altere 'cadastrar.html' pelo nome da sua página de cadastro
+    window.location.href = "../registration/index.html";
 });
