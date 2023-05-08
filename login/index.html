@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+   <link rel="shortcut icon" href="../assets/heart-flag.png" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="logo-container">
+            <img src="style/images/login-logo.png" alt="" id="logo">
+        </div>
+        <h2 id="main-title">Iniciar sessão</h2>
+        <form id="fields-form">
+            <ul class="login-fields">
+                <li id="email">
+                    <label for="email-input">E-mail</label>
+                    <input type="text" id="email-input" placeholder="Digite seu e-mail">
+                </li>
+                <li id="password">
+                    <label for="password-input">Senha</label>
+                    <input type="password" id="password-input" placeholder="**********">
+                </li>
+            </ul>
+            <div id="message-container">
+                <p id="success-message">Login bem sucedido!</p>
+            </div>
+            <div id="action-container">
+                <button type="submit" id="login-button">Acessar</button>
+            </div>
+            <div id="register-container">
+                <label for="register" id="register-text">Ainda não tem cadastro?</label>
+                <button type="button" id="register-button">Cadastre-se</button>
+            </div>
+        </form>
+    </div>
+    <script src="script/index.js"></script>
+</body>
+</html>

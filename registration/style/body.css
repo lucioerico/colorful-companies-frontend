@@ -1,0 +1,98 @@
+.main-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: black;
+    margin: 2rem 1rem;
+}
+
+.user-fields {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+.user-fields div {
+    width: 100%;
+}
+
+#fields-form {
+    width: 100%;
+}
+
+.form-input-text {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    color: rgba(118, 118, 118, 1);
+    background-color: rgba(241, 245, 244, 1);
+}
+
+.agreement-container {
+    max-width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.submit-button {
+    width: 100%;
+    grid-area: submit;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(136, 178, 70, 1);
+    cursor: pointer;
+}
+
+.cancel-button {
+    width: 100%;
+    grid-area: cancel;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(197, 70, 54, 1);   
+    cursor: pointer;
+}
+
+.redirect-login {
+    width: 100%;
+    grid-area: login;
+    text-align: center;
+}
+
+.actions-container {
+    display: grid;
+    grid-template-areas:
+	"submit cancel"
+    "login login"		
+	;
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+#error-message {
+    display: none;
+    justify-content: center;
+    color: red;
+    margin: 0.5rem 0;
+}
+
+#success-message {
+    display: none;
+    justify-content: center;
+    color: green;
+    margin: 0.5rem 0;
+}
