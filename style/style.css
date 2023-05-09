@@ -95,7 +95,7 @@ section h2 {
   width: 100%;
   height: 40vh;
   position: relative;
-  background: url("./assets/img-destaque.png") no-repeat;
+  background: url("../assets/img-destaque.png") no-repeat;
   background-size: cover;
   padding: 0;
 }
@@ -425,4 +425,9 @@ footer p {
   .nav-item {
     margin-left: 0px !important;
   }
+}
+
+#home {
+  background-color: rgba(128, 128, 128, 0.112);
+  border-radius: 4px;
 }
