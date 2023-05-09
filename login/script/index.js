@@ -16,12 +16,13 @@ function doLogin() {
         })
         .then(response => {
             if (response.ok) {
-                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('success-message');
                 setTimeout(() => window.location.href = "../index.html", 1000);
             } else {
-                response.text().then(mensagem => {
+                response.text().then(mensagem => {                  
                     const messageContainer = document.getElementById('message-container');
-                    messageContainer.innerHTML = mensagem;
+                    const messageReturn = JSON.parse(mensagem)
+                    messageContainer.innerHTML = messageReturn.error;
                     messageContainer.style.display = 'block';
                 });
             }
