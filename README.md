@@ -48,6 +48,29 @@ Execute o comando no projeto backend, no terminal na IDE de sua preferência
 <p>EMAIL: teste@teste.com</p>
 <p>PASSWORD: 101010</p>
 
+<h2>Cadastro</h2>
+
+<p>Para realizar cadastro de um usuário é necessário adicionar no campo dados como:</p>
+<ul>nome</ul>
+<ul>CPF</ul>
+<ul>E-mail</ul>
+<ul>Cidade</ul>
+<ul>Endereço</ul>
+<ul>Senha</ul>
+<ul>Confirmar Senha</ul>
+
+<p>De todos os campos o CPF deve ser algo verossimil, para realizar o teste sugerimos entrar no site de gerador de CPF.</p>
+<pre><dev>https://www.4devs.com.br/gerador_de_cpf</dev></pre>
+
+<h2>Cadastro de Avaliação</h2>
+
+<p>Para realizar cadastro de avaliação de uma empresa você deve clicar no botão Avaliar.</p>
+<p>Em seguida será aberto um pop-up para preencher os seguintes campos</p>
+<ul>Razão Social: Para selecionar uma empresa pré-cadastrada no sistema</ul>
+<ul>Título: Referente ao título da avalição que o usuário fará </ul>
+<ul>Avaliar: Local onde o usuário escolhe as quantidades de estrelas para empresa</ul>
+<ul>Campo de texto: Local onde o usuário coloca um texto falando sobre a experiência de trabalhar naquela instituição</ul>
+
 <h2>Tecnologias</h2>
 
 <p>As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do projeto:</p>
