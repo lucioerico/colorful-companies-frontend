@@ -32,6 +32,29 @@
 
 Execute o comando no projeto backend, no terminal na IDE de sua preferência 
 <pre><code>npm install</code></pre>
+
+
+<h2>Configuração do Banco de Dados</h2>
+
+<p>Para que o sistema funcione perfeitamente, será necessário criar um arquivo .env</p>
+<p>Abaixo as instruções para criação do arquivo</p>
+<ol>
+  <li>Abrir algum editor de texto e colocar o seguinte texto</li>
+  <pre><code>
+  DB_HOST=motty.db.elephantsql.com
+  DB_PORT=5432
+  DB_USER=ycxzkeat
+  DB_PASS=gEYmswSWQxxIHFxAcIEtIyZg3ervXTmE
+  DB_NAME=ycxzkeat
+  PORT=3000
+  </code></pre>
+  
+  <li>!ATENÇÃO! Em seguida salvar o arquivo em extenção .env</li>
+  <li> Salvar o arquivo sem nome ".env" na pasta</li>
+   <pre><code>../colorful-companies-backend/</code></pre>
+</ol>
+
+<p>Com isso o arquivo backend estará completo para funcionamento.</p>
   
 <h2>Execução</h2>
 
@@ -51,13 +74,13 @@ Execute o comando no projeto backend, no terminal na IDE de sua preferência
 <h2>Cadastro</h2>
 
 <p>Para realizar cadastro de um usuário é necessário adicionar no campo dados como:</p>
-<ul>nome</ul>
-<ul>CPF</ul>
-<ul>E-mail</ul>
-<ul>Cidade</ul>
-<ul>Endereço</ul>
-<ul>Senha</ul>
-<ul>Confirmar Senha</ul>
+<ul>- nome</ul>
+<ul>- CPF</ul>
+<ul>- E-mail</ul>
+<ul>- Cidade</ul>
+<ul>- Endereço</ul>
+<ul>- Senha</ul>
+<ul>- Confirmar Senha</ul>
 
 <p>De todos os campos o CPF deve ser algo verossimil, para realizar o teste sugerimos entrar no site de gerador de CPF.</p>
 <pre><dev>https://www.4devs.com.br/gerador_de_cpf</dev></pre>
@@ -66,10 +89,10 @@ Execute o comando no projeto backend, no terminal na IDE de sua preferência
 
 <p>Para realizar cadastro de avaliação de uma empresa você deve clicar no botão Avaliar.</p>
 <p>Em seguida será aberto um pop-up para preencher os seguintes campos</p>
-<ul>Razão Social: Para selecionar uma empresa pré-cadastrada no sistema</ul>
-<ul>Título: Referente ao título da avalição que o usuário fará </ul>
-<ul>Avaliar: Local onde o usuário escolhe as quantidades de estrelas para empresa</ul>
-<ul>Campo de texto: Local onde o usuário coloca um texto falando sobre a experiência de trabalhar naquela instituição</ul>
+<ul>- Razão Social: Para selecionar uma empresa pré-cadastrada no sistema</ul>
+<ul>- Título: Referente ao título da avalição que o usuário fará </ul>
+<ul>- Avaliar: Local onde o usuário escolhe as quantidades de estrelas para empresa</ul>
+<ul>- Campo de texto: Local onde o usuário coloca um texto falando sobre a experiência de trabalhar naquela instituição</ul>
 
 <h2>Tecnologias</h2>
 
